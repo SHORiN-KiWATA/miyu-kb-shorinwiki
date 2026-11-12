@@ -1,0 +1,38 @@
+# 每天看一次 shorinwiki 有没有新提交（项目主人 2026-11-12 定：包仓库自己查，wiki 仓库不用改）。文档有变化的：
+# 改版本、提交、打标签，再照标签叫 release.yml 发包（用 GITHUB_TOKEN 推的标签不会自己触发别的工作流，手动叫的会）。
+name: update
+on:
+  schedule:
+    - cron: "17 3 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: write
+concurrency:
+  group: update
+jobs:
+  update:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: 取 shorinwiki
+        run: git clone --depth 1 https://github.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide "$RUNNER_TEMP/wiki"
+      - name: 抄进知识库
+        id: sync
+        run: echo "result=$(tools/sync.sh "$RUNNER_TEMP/wiki")" >> "$GITHUB_OUTPUT"
+      - name: 发新版
+        if: steps.sync.outputs.result == 'changed'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          version=$(tools/bump.sh)
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A package UPSTREAM_COMMIT
+          git commit -m "kb: 跟上 shorinwiki $(cut -c1-7 UPSTREAM_COMMIT)，版本 $version"
+          git tag "v$version"
+          git push origin HEAD:main "v$version"
+          gh workflow run release.yml --ref "v$version"
+      - name: 没变化
+        if: steps.sync.outputs.result != 'changed'
+        run: echo "shorinwiki 没有新的文档改动。"

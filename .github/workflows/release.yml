@@ -1,0 +1,14 @@
+# 发包：推 v* 标签时（或者 update.yml 打完标签以后照标签手动叫）照官方打包模板把 package/ 打成 kb-shorinwiki 的 .miyu，传进这个标签的 Release。
+name: release
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+jobs:
+  pack:
+    uses: miyu-agent/packages/.github/workflows/pack.yml@main
+    permissions:
+      contents: write
+    with:
+      package: kb-shorinwiki
+      folder: package

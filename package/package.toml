@@ -1,0 +1,9 @@
+# shorinwiki（https://github.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide）打成的知识库包：装上以后多一个只读的知识库「Shorin 的 Linux 指南」。
+# 文档由仓库的 tools/sync.sh 照 wiki 抄进 kb/shorinwiki/，版本由 tools/bump.sh 照日期定；.github/workflows/update.yml 每天看一次 wiki 有没有新提交。
+[package]
+version = "0.20261112.0"
+name = { zh = "Shorin 的 Linux 指南（知识库）", en = "Shorin's Linux Guide (knowledge base)" }
+summary = { zh = "把 shorinwiki 装进知识库：Arch Linux、CachyOS、Linux Mint 的安装和调校，桌面、显卡、游戏、虚拟机", en = "Adds shorinwiki as a knowledge base: installing and tuning Arch Linux, CachyOS and Linux Mint, desktops, graphics, gaming, VMs" }
+author = "SHORiN-KiWATA"
+icon = "book-open"
+upstream = "https://github.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide"

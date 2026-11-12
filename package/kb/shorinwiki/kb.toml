@@ -1,0 +1,3 @@
+name = "Shorin 的 Linux 指南"
+description = "Shorin's Linux guide (Chinese): installing and tuning Arch Linux, CachyOS and Linux Mint, desktops (KDE, GNOME, Niri, Wayfire, Labwc), graphics drivers, gaming, virtual machines, proxies, input methods."
+auto = true
