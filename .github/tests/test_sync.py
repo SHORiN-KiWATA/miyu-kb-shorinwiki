@@ -202,5 +202,37 @@ class PinnedCommit(Sync):
         self.assertEqual((self.here / "UPSTREAM_COMMIT").read_text(), second + "\n")
 
 
+class SymlinkedMarkdown(Sync):
+    # 审计 #188：抄 Markdown 的 cp 不带 -P，跟着符号链接抄：上游放一个指向仓库外文件的
+    # .md 链接，那个文件的内容就进了知识库。链接本身也不能进包（核心打包拒收符号链接）。
+    # 应跳过链接、在 stderr 说一句，不算失败；别的文档照常同步。
+    test_empty_upstream_refused = None
+    test_non_git_source_leaves_kb_untouched = None
+    test_normal_upstream_syncs = None
+
+    def test_symlinked_markdown_skipped(self):
+        secret = self.base / "outside.txt"
+        secret.write_text("SECRET-OUTSIDE\n", encoding="utf-8")
+        up = self.base / "up"
+        (up / "wiki" / "sub").mkdir(parents=True)
+        (up / "wiki" / "a.md").write_text("# a\n", encoding="utf-8")
+        (up / "wiki" / "leak.md").symlink_to(secret)
+        (up / "wiki" / "sub" / "alias.md").symlink_to("../a.md")
+        for cmd in (["init", "-q", "-b", "main"], ["add", "-A"], ["commit", "-q", "-m", "x"]):
+            subprocess.run(["git", "-C", str(up), *cmd], env=self.env, check=True,
+                           capture_output=True, timeout=30)
+        p = self.sync(up)
+        self.assertEqual(p.returncode, 0, p.stderr)
+        self.assertEqual(p.stdout.split(), ["changed"], p.stderr)
+        self.assertEqual((self.kb / "a.md").read_text(encoding="utf-8"), "# a\n")
+        for rel in ("leak.md", "sub/alias.md"):
+            with self.subTest(rel=rel):
+                self.assertFalse(os.path.lexists(self.kb / rel), f"{rel} 是符号链接，不该进知识库")
+                self.assertIn(rel, p.stderr, "跳过链接要在 stderr 说一句")
+        leaked = [str(q) for q in self.kb.rglob("*") if q.is_symlink()
+                  or (q.is_file() and b"SECRET-OUTSIDE" in q.read_bytes())]
+        self.assertEqual(leaked, [], "仓库外的内容或链接进了知识库")
+
+
 if __name__ == "__main__":
     unittest.main()
