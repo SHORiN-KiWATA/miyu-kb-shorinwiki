@@ -6,7 +6,7 @@
 miyu pkg install kb-shorinwiki
 ```
 
-- `package/`：包本身。`package/kb/shorinwiki/` 是 wiki 的 Markdown（不含 `wiki/legacy/` 里过时的教程，不含图片），`kb.toml` 写着知识库的名字、说明，自动想起默认开着（知识库页能关）。
+- `package/`：包本身。`package/kb/shorinwiki/` 是 wiki 的 Markdown（不含 `wiki/legacy/` 里过时的教程，不含图片：相对图片链接同步时改写成上游仓库在 `UPSTREAM_COMMIT` 那个提交上的 raw 地址），`kb.toml` 写着知识库的名字、说明，自动想起默认开着（知识库页能关）。
 - `tools/sync.sh <wiki 的检出>`：照 wiki 更新文档，记下来源的提交（`UPSTREAM_COMMIT`）；检出不是 git 仓库、`wiki/` 里一篇 Markdown 都没有时报错退出，知识库和 `UPSTREAM_COMMIT` 不动。`tools/bump.sh`：版本改成 `0.<日期>.<当天第几次>`。
 - `.github/workflows/update.yml`：每天看一次 wiki，有新的文档改动就发新版；也可以在 Actions 里手动跑。
 
