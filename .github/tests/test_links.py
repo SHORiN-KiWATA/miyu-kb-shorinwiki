@@ -50,6 +50,26 @@ def local_part(target):
     return urllib.parse.unquote(target.split("#")[0])
 
 
+PINNED = re.compile(r"(!\[[^\]]*\]\()" + re.escape(RAW + UPSTREAM + "/") + r"[0-9a-f]{40}/([^)\s#]+)")
+
+
+def as_upstream(text, rel):
+    """把同步时改写成上游 raw 地址的图片链接还原成相对链接（代码块里的同步时没动，这里也不动）。"""
+    here = posixpath.join("wiki", posixpath.dirname(rel))
+
+    def back(m):
+        path = urllib.parse.unquote(m.group(2))
+        return m.group(1) + urllib.parse.quote(posixpath.relpath(path, here))
+
+    lines, fence = text.split("\n"), False
+    for i, line in enumerate(lines):
+        if line.strip().startswith("```"):
+            fence = not fence
+        elif not fence:
+            lines[i] = PINNED.sub(back, line)
+    return "\n".join(lines)
+
+
 class ImageLinks(unittest.TestCase):
     # 审计 #187：sync.sh 只抄 *.md，上游文档里的图片相对链接（../pictures/x.png 等）在
     # 知识库里全都指向不存在的文件（origin/main 上 13 个文件 94 处）。主人定：同步时改写成
@@ -73,11 +93,13 @@ class ImageLinks(unittest.TestCase):
         self.here, self.kb = here, here / KB
 
         # 假上游：wiki/ 下是现有知识库的 .md；每个相对图片链接解析出的路径上放占位文件。
+        # 知识库同步过以后，里面的图片链接已经是钉在某个提交上的上游 raw 地址：先还原成上游原来的
+        # 相对写法，假上游才和真上游一个样（不然没有相对链接可测）。
         up = base / "up"
         self.expected = {}       # 知识库里的 .md 相对路径 → 该文件里应出现的上游路径集合
         for md in sorted(self.kb.rglob("*.md")):
             rel = md.relative_to(self.kb).as_posix()
-            text = md.read_text(encoding="utf-8")
+            text = as_upstream(md.read_text(encoding="utf-8"), rel)
             dst = up / "wiki" / rel
             dst.parent.mkdir(parents=True, exist_ok=True)
             dst.write_text(text, encoding="utf-8")
