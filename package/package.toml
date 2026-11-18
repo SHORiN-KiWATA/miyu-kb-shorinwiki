@@ -7,3 +7,4 @@ summary = { zh = "把 shorinwiki 装进知识库：Arch Linux、CachyOS、Linux 
 author = "SHORiN-KiWATA"
 icon = "book-open"
 upstream = "https://github.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide"
+license = "CC-BY-SA-4.0"
