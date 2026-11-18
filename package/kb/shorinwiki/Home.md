@@ -15,7 +15,7 @@ Linux `/lɪnəks/` 只是一个内核，我们说 Linux 发行版的时候指的
 
   [LinusTechTips的经历](https://www.bilibili.com/video/BV19Pw4zHEE8/?share_source=copy_web&vd_source=1c6a132d86487c8c4a29c7ff5cd8ac50)告诉我们："好的发行版选择至关重要"。通过 [Steam 硬件统计排名](https://store.steampowered.com/hwsurvey/Steam-Hardware-Software-Survey-Welcome-to-Steam?platform=linux) 选择发行版是我觉得最有效最贴合实际的策略。
 
-  ![](pictures/home/steamrank.png)
+  ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/ce4a4650f8d8787b2064ad3429a6facb4d4d0d4b/wiki/pictures/home/steamrank.png)
 
   除去[基于 Arch 开发的 SteamOS](https://lists.archlinux.org/archives/list/arch-dev-public@lists.archlinux.org/thread/RIZSKIBDSLY4S5J2E2STNP5DH4XZGJMR/)，Arch Linux、Linux Mint 和 CachyOS 常居排行榜前三。
 
@@ -37,7 +37,7 @@ Linux `/lɪnəks/` 只是一个内核，我们说 Linux 发行版的时候指的
 
   当前最热门的发行版。台式机的首选。缺点是稳定性低于原版 Arch Linux 且功耗略高，不适合注重续航的场景。
 
-  ![](pictures/home/cachyospreview.webp)
+  ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/ce4a4650f8d8787b2064ad3429a6facb4d4d0d4b/wiki/pictures/home/cachyospreview.webp)
 
 - [CatOS](https://www.catos.info/)
 
@@ -45,7 +45,7 @@ Linux `/lɪnəks/` 只是一个内核，我们说 Linux 发行版的时候指的
 
   对中国大陆用户进行了专门调整的 Arch 衍生发行版。官网的 ISO 更新可能不及时，建议加 Q 群：`428382413`。
 
-  ![](pictures/home/catospreview.png)
+  ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/ce4a4650f8d8787b2064ad3429a6facb4d4d0d4b/wiki/pictures/home/catospreview.png)
 
 - [Garuda Linux](https://garudalinux.org/)
 
@@ -53,7 +53,7 @@ Linux `/lɪnəks/` 只是一个内核，我们说 Linux 发行版的时候指的
 
   我个人最喜欢的 Arch 衍生发行版，主题设计很棒，还提供了很多便利工具，缺点是资源占用略高。
 
-  ![](pictures/home/garudapreview.webp)
+  ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/ce4a4650f8d8787b2064ad3429a6facb4d4d0d4b/wiki/pictures/home/garudapreview.webp)
 
 ## 其他推荐
 

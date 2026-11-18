@@ -138,7 +138,7 @@ Harness，字面意思是套在马身上让马干活的东西，AI Harness 可�
 
 以 Deepseek 为例，阅读他们的[官方接口文档](https://api-docs.deepseek.com/zh-cn/)
 
-![](./pictures/deepseek接口.png)
+![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/ce4a4650f8d8787b2064ad3429a6facb4d4d0d4b/wiki/pictures/deepseek%E6%8E%A5%E5%8F%A3.png)
 
 可以在表格中找到这三样东西：`base_url`决定了请求谁，`api_key`是密钥，`model`决定了使用什么模型。有了这三样东西就可以在任意地方调用 AI 了。
 
