@@ -103,5 +103,104 @@ class Sync(unittest.TestCase):
         self.assertEqual((self.here / "UPSTREAM_COMMIT").read_text(), head)
 
 
+RAW = "https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/"
+
+
+class PinnedCommit(Sync):
+    # 审计 #187 返工（合并人要求）：图片链接钉在上游最新提交上，上游任何一次提交（哪怕没碰
+    # wiki）都会让改写出来的地址变、判成 changed、自动发一版。比较时要把钉的提交号归一化掉，
+    # 另用仓库根的 UPSTREAM_IMAGES（每行 `<blob 哈希> <上游路径>`）看被引用的图片变没变。
+    # unchanged 时知识库、UPSTREAM_COMMIT、UPSTREAM_IMAGES 都不动。
+    PAGE = "# 页面\n\n![图](../pictures/a.png)\n"
+    # 只借 Sync 的准备和帮手；它的三条测试不在这个类下面再跑一遍。
+    test_empty_upstream_refused = None
+    test_non_git_source_leaves_kb_untouched = None
+    test_normal_upstream_syncs = None
+
+    def git(self, repo, *args):
+        return subprocess.run(["git", "-C", str(repo), *args], env=self.env, check=True,
+                              capture_output=True, text=True, timeout=30).stdout.strip()
+
+    def commit_files(self, up, files):
+        for rel, content in files.items():
+            p = up / rel
+            p.parent.mkdir(parents=True, exist_ok=True)
+            if isinstance(content, bytes):
+                p.write_bytes(content)
+            else:
+                p.write_text(content, encoding="utf-8")
+        self.git(up, "add", "-A")
+        self.git(up, "commit", "-q", "-m", "next")
+        return self.git(up, "rev-parse", "HEAD")
+
+    def first_upstream(self):
+        up = self.upstream({"wiki/guide/page.md": self.PAGE, "README.md": "readme\n"})
+        return up, self.commit_files(up, {"wiki/pictures/a.png": b"PNG-1"})
+
+    def state(self):
+        images = self.here / "UPSTREAM_IMAGES"
+        return (snapshot(self.kb), (self.here / "UPSTREAM_COMMIT").read_text(),
+                images.read_text() if images.exists() else None)
+
+    def sync_ok(self, src, expect):
+        p = self.sync(src)
+        self.assertEqual(p.returncode, 0, p.stderr)
+        self.assertEqual(p.stdout.split(), [expect], p.stderr)
+
+    def page_links(self):
+        return (self.kb / "guide" / "page.md").read_text(encoding="utf-8")
+
+    def check_unrelated_commit_unchanged(self, clone):
+        up, first = self.first_upstream()
+        src = clone(up)
+        self.sync_ok(src, "changed")
+        self.assertIn(f"{RAW}{first}/wiki/pictures/a.png", self.page_links())
+        blob = self.git(up, "rev-parse", "HEAD:wiki/pictures/a.png")
+        self.assertEqual((self.here / "UPSTREAM_IMAGES").read_text(),
+                         f"{blob} wiki/pictures/a.png\n")
+        before = self.state()
+        self.commit_files(up, {"README.md": "readme 2\n"})
+        self.sync_ok(clone(up), "unchanged")
+        self.assertEqual(self.state(), before, "上游没动 wiki 和图片，三样都不该变")
+        self.assertIn(f"{RAW}{first}/wiki/pictures/a.png", self.page_links())
+
+    def test_unrelated_upstream_commit_is_unchanged(self):
+        self.check_unrelated_commit_unchanged(lambda up: up)
+
+    # update.yml 用 git clone --depth 1：浅克隆里也要取得到 blob 哈希。
+    def test_unrelated_commit_unchanged_with_shallow_clone(self):
+        n = [0]
+
+        def clone(up):
+            n[0] += 1
+            dst = self.base / f"clone{n[0]}"
+            subprocess.run(["git", "clone", "-q", "--depth", "1", f"file://{up}", str(dst)],
+                           env=self.env, check=True, capture_output=True, timeout=30)
+            return dst
+        self.check_unrelated_commit_unchanged(clone)
+
+    def test_replaced_image_is_changed(self):
+        up, first = self.first_upstream()
+        self.sync_ok(up, "changed")
+        old_blob = self.git(up, "rev-parse", "HEAD:wiki/pictures/a.png")
+        second = self.commit_files(up, {"wiki/pictures/a.png": b"PNG-2"})
+        self.sync_ok(up, "changed")
+        self.assertIn(f"{RAW}{second}/wiki/pictures/a.png", self.page_links())
+        new_blob = self.git(up, "rev-parse", "HEAD:wiki/pictures/a.png")
+        self.assertNotEqual(old_blob, new_blob)
+        self.assertEqual((self.here / "UPSTREAM_IMAGES").read_text(),
+                         f"{new_blob} wiki/pictures/a.png\n")
+        self.assertEqual((self.here / "UPSTREAM_COMMIT").read_text(), second + "\n")
+
+    def test_edited_markdown_is_changed(self):
+        up, _ = self.first_upstream()
+        self.sync_ok(up, "changed")
+        second = self.commit_files(up, {"wiki/guide/page.md": self.PAGE + "\n多一行\n"})
+        self.sync_ok(up, "changed")
+        self.assertIn("多一行", self.page_links())
+        self.assertIn(f"{RAW}{second}/wiki/pictures/a.png", self.page_links())
+        self.assertEqual((self.here / "UPSTREAM_COMMIT").read_text(), second + "\n")
+
+
 if __name__ == "__main__":
     unittest.main()

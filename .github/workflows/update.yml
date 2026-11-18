@@ -31,7 +31,7 @@ jobs:
           version=$(tools/bump.sh)
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A package UPSTREAM_COMMIT
+          git add -A package UPSTREAM_COMMIT UPSTREAM_IMAGES
           git commit -m "kb: 跟上 shorinwiki $(cut -c1-7 UPSTREAM_COMMIT)，版本 $version"
           git tag "v$version"
           git push origin HEAD:main "v$version"
