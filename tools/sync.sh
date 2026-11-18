@@ -23,8 +23,13 @@ stage="$(mktemp -d)"
 trap 'rm -rf "$stage"' EXIT
 mkdir -p "$stage/kb"
 # 只要 Markdown；legacy/ 里是过时的教程（项目主人 2026-11-12 定不打进去）。
+# 符号链接不抄：cp 会跟着链接把仓库外的文件抄进来，链接本身核心打包又不收。
 (cd "$src/wiki" && find . -name '*.md' -not -path './legacy/*' -print0) |
   while IFS= read -r -d '' file; do
+    if [ -L "$src/wiki/$file" ]; then
+      echo "跳过符号链接 wiki/${file#./}" >&2
+      continue
+    fi
     mkdir -p "$stage/kb/$(dirname "$file")"
     cp "$src/wiki/$file" "$stage/kb/$file"
   done
