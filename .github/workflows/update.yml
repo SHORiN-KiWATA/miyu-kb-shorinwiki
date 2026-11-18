@@ -19,7 +19,10 @@ jobs:
         run: git clone --depth 1 https://github.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide "$RUNNER_TEMP/wiki"
       - name: 抄进知识库
         id: sync
-        run: echo "result=$(tools/sync.sh "$RUNNER_TEMP/wiki")" >> "$GITHUB_OUTPUT"
+        # 先跑、失败就让这一步失败（默认 shell 是 bash -e），再写输出；写在 echo 里会吞掉退出码。
+        run: |
+          result=$(tools/sync.sh "$RUNNER_TEMP/wiki")
+          echo "result=$result" >> "$GITHUB_OUTPUT"
       - name: 发新版
         if: steps.sync.outputs.result == 'changed'
         env:
