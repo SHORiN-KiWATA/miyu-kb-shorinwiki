@@ -19,7 +19,7 @@
 
 `Super+Shift+/` 打开按键教程，基于 fzf，可以模糊搜索。
 
-![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/ce4a4650f8d8787b2064ad3429a6facb4d4d0d4b/wiki/pictures/shorin-niri/niri-binds.gif)
+![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/shorin-niri/niri-binds.gif)
 
 所有快捷键可以在 `.config/niri/binds.kdl` 查看，有详细的中文注释。
 
@@ -50,7 +50,7 @@
 
   `Super+Alt+W` 或者右键点击任务栏上的取色器模块打开 waypaper 切换壁纸。waypaper 的配置文件在 `~/.config/waypaper/`。waypaper 里按下 Z 键可以切换简洁模式（简洁模式默认开启）。
 
-  ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/ce4a4650f8d8787b2064ad3429a6facb4d4d0d4b/wiki/pictures/shorin-niri/waypaper.gif)
+  ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/shorin-niri/waypaper.gif)
 
   还可以使用 `Mod+F10` 快捷键随机切换壁纸。
   
@@ -64,7 +64,7 @@
 
   通过脚本在聚焦时自动切换壁纸为当前壁纸的模糊版本。第一次打开 Niri 会通过 ImageMagick 生成模糊壁纸，CPU 会起飞一会。Niri 已支持窗口模糊，故弃用。如果你不想用测试分支的 Niri，一定要用这个的话可以编辑 `~/.config/niri/config.kdl` 取消下图中 spawn... 那行开头代表注释的 `//`：
 
-  ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/ce4a4650f8d8787b2064ad3429a6facb4d4d0d4b/wiki/pictures/shorin-niri/niri-auto-blur-bg.png)
+  ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/shorin-niri/niri-auto-blur-bg.png)
   
   脚本路径：`~/.config/scripts/niri_auto_blur_bg.sh`
 
@@ -76,7 +76,7 @@
 
   缓存文件位置：`~/.cache/blur-wallpapers/`
 
-  ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/ce4a4650f8d8787b2064ad3429a6facb4d4d0d4b/wiki/pictures/shorin-niri/auto-blur-overview.gif)
+  ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/shorin-niri/auto-blur-overview.gif)
 
 - 主题颜色切换
 
@@ -86,7 +86,7 @@
 
     中间任务栏上的取色器模块或者快捷键 `Super+Alt+T/M` 可以打开 Matugen 配置菜单。可以切换浅色、暗色和各种不同的颜色生成方案。自 Matugen 4.0 开始增加了 `随机主色` 和 `固定第一主色` 两个模式。固定第一主色模式使用 `matugen --source-color-index 0` 强制使用第一主色。随机主色模式会在 Matugen 提供的多个主色之间轮换。这个配置菜单脚本的路径在 `~/.config/scripts/matugen-select-type.sh`。
 
-    ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/ce4a4650f8d8787b2064ad3429a6facb4d4d0d4b/wiki/pictures/shorin-niri/matugen-select-type.png)
+    ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/shorin-niri/matugen-select-type.png)
 
 ## 输入法
 
@@ -96,11 +96,11 @@
 
   切换到 RIME 输入法引擎后按下 `F4` 可以打开 RIME 输入法菜单，如果你的 Shorin-Niri 是包括常用软件的完整安装的话里面会包含主流的五笔86、明月拼音、小鹤双拼和注音输入方案。
   
-  ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/ce4a4650f8d8787b2064ad3429a6facb4d4d0d4b/wiki/pictures/shorin-niri/rime-f4.png)
+  ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/shorin-niri/rime-f4.png)
 
   配置 Fcitx5 可以使用 `fcitx5-configtool`，程序菜单中叫 `Fcitx5 配置`。
 
-  ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/ce4a4650f8d8787b2064ad3429a6facb4d4d0d4b/wiki/pictures/shorin-niri/fcitx5-configtool.png)
+  ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/shorin-niri/fcitx5-configtool.png)
 
 - `rime-llm-translator`
 
@@ -131,27 +131,27 @@
 
   左键可以切换工作区，因为 Niri 的工作区是动态增删的，所以使用图标区分而不是数字。
 
-  ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/ce4a4650f8d8787b2064ad3429a6facb4d4d0d4b/wiki/pictures/shorin-niri/waybar/workspace.png)
+  ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/shorin-niri/waybar/workspace.png)
 
 - 应用模块 `cffi/niri-taskbar`
 
   用于显示已经开启的应用，此功能由第三方的 `waybar-niri-taskbar` 提供。
 
-  ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/ce4a4650f8d8787b2064ad3429a6facb4d4d0d4b/wiki/pictures/shorin-niri/waybar/taskbar.png)
+  ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/shorin-niri/waybar/taskbar.png)
 
 - 应用title名称模块 `niri/window`
 
   用于显示当前聚焦窗口的 title 名称，这个名称可以在设置窗口规则时使用。
 
-  ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/ce4a4650f8d8787b2064ad3429a6facb4d4d0d4b/wiki/pictures/shorin-niri/waybar/window.png)
+  ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/shorin-niri/waybar/window.png)
 
 - 常用命令模块 `custom/actions`
 
   包含了大部分常用命令。
 
-  ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/ce4a4650f8d8787b2064ad3429a6facb4d4d0d4b/wiki/pictures/shorin-niri/waybar/actions.png)
+  ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/shorin-niri/waybar/actions.png)
 
-  ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/ce4a4650f8d8787b2064ad3429a6facb4d4d0d4b/wiki/pictures/shorin-niri/waybar/actions-menu.png)
+  ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/shorin-niri/waybar/actions-menu.png)
 
 - 录屏模块 `custom/wfrec`
 
@@ -159,9 +159,9 @@
   
   此脚本由 `shorin-contrib-git` AUR 包提供，运行 `shorin screenrec` 命令开启。录制文件存放于 `~/Videos/shorin-screenrec/`。
 
-  ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/ce4a4650f8d8787b2064ad3429a6facb4d4d0d4b/wiki/pictures/shorin-niri/waybar/wfrec.png)
+  ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/shorin-niri/waybar/wfrec.png)
 
-  ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/ce4a4650f8d8787b2064ad3429a6facb4d4d0d4b/wiki/pictures/shorin-niri/waybar/wfrec-settings.png)
+  ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/shorin-niri/waybar/wfrec-settings.png)
 
 - 截图模块 `custom/screenshot`
 
@@ -169,11 +169,11 @@
 
   左键使用 `grim` 和 `slurp` 简单截图，仅进入剪贴板。
 
-  ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/ce4a4650f8d8787b2064ad3429a6facb4d4d0d4b/wiki/pictures/shorin-niri/waybar/screenshot-left.gif)
+  ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/shorin-niri/waybar/screenshot-left.gif)
   
   右键打开截图菜单（`~/.config/waybar/scripts/power-screenshot.sh`），支持一系列设置。可以从 Niri 和 `grim` 两种后端之间切换，还可以设置是否编辑，编辑使用 `satty` 或者 `swappy`（新版本 Shorin-Niri 已经移除了 `swappy`，要使用的话得自己装）。
   
-  ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/ce4a4650f8d8787b2064ad3429a6facb4d4d0d4b/wiki/pictures/shorin-niri/waybar/screenshot-right.gif)
+  ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/shorin-niri/waybar/screenshot-right.gif)
 
   中键可以长截图，详情看：[SHORiN-KiWATA/wl-longshot](https://github.com/SHORiN-KiWATA/wl-longshot)
 
@@ -209,13 +209,13 @@
 
   `~/.config/waybar/scripts/check-updates.sh`，显示待更新的 pacman 和 AUR 软件。左键可以调用 `shorin sysup` 更新系统，右键可以调用 `shorin checkallupdates` 显示所有待更新的项目。
 
-  ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/ce4a4650f8d8787b2064ad3429a6facb4d4d0d4b/wiki/pictures/shorin-niri/waybar/checkallupadtes.gif)
+  ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/shorin-niri/waybar/checkallupadtes.gif)
 
 - 后台应用模块 `tray`
 
 - 亮度模块 `group/ddcutil`
 
-  ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/ce4a4650f8d8787b2064ad3429a6facb4d4d0d4b/wiki/pictures/shorin-niri/waybar/ddcutil.png)
+  ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/shorin-niri/waybar/ddcutil.png)
 
   这是一个合集模块。月亮是笔记本内屏亮度调节，三个太阳是使用 ddcutil 调节外接屏幕亮度，没有做成滑块是因为会导致笔记本内屏卡死。如果切换外屏亮度的功能没有生效可以确认 `modules.jsonc` 里此模块的显示器是否正确指定。
   
@@ -223,13 +223,13 @@
 
 - 隐私模块 `privacy`
 
-  ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/ce4a4650f8d8787b2064ad3429a6facb4d4d0d4b/wiki/pictures/shorin-niri/waybar/privacy.png)
+  ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/shorin-niri/waybar/privacy.png)
 
   如果有软件正在使用桌面门户进行屏幕分享，这个模块才会出现。
 
 - 音频模块 `group/audio`
 
-  ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/ce4a4650f8d8787b2064ad3429a6facb4d4d0d4b/wiki/pictures/shorin-niri/waybar/audio.png)
+  ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/shorin-niri/waybar/audio.png)
 
   这是个合集模块。通过滑块调整系统音量，滚轮调整麦克风音量。左键静音，右键关闭麦克风。中键打开 `pavucontrol` 面板。
 
@@ -237,7 +237,7 @@
 
   左键可以打开连接蓝牙的 TUI（`bluetui`），右键禁用/启用蓝牙设备。
 
-  ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/ce4a4650f8d8787b2064ad3429a6facb4d4d0d4b/wiki/pictures/shorin-niri/waybar/bluetui.png)
+  ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/shorin-niri/waybar/bluetui.png)
 
   `S 键` 搜索，`回车` 连接
 
@@ -245,7 +245,7 @@
 
   左键可以打开 `impala` 连接 Wi-Fi，右键可以打开 `nm-connection-editor` 进行高级网络配置。
 
-  ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/ce4a4650f8d8787b2064ad3429a6facb4d4d0d4b/wiki/pictures/shorin-niri/waybar/impala.png)
+  ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/shorin-niri/waybar/impala.png)
 
   `S 键` 扫描网络。`Tab 键` 切换板块。`回车` 连接。
 

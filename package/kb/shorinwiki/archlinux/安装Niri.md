@@ -37,7 +37,7 @@
 
 ## 这是你在这篇文章之后能够获得的 Niri 环境
 
-![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/ce4a4650f8d8787b2064ad3429a6facb4d4d0d4b/wiki/pictures/waybar-bottom-niri.png)
+![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/waybar-bottom-niri.png)
 
 视频教程（旧版）：[「Niri 入门指南 2025」颠覆传统桌面体验，最适合新手的窗口管理器](https://www.bilibili.com/video/BV1fgUEBMEMZ/?share_source=copy_web&vd_source=1c6a132d86487c8c4a29c7ff5cd8ac50)
 

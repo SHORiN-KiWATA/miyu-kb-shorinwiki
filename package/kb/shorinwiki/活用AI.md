@@ -26,7 +26,7 @@ Harness，字面意思是套在马身上让马干活的东西，AI Harness 可�
     ```
     sudo pacman -S opencode
     ```
-    >Arch 系也可以试试从 AUR 安装 [Miyu](https://ithub.global.ssl.fastly.net/SHORiN-KiWATA/Miyu)，这是我自己的项目。
+    >Arch 系也可以试试从 AUR 安装 [Miyu](https://github.com/miyu-agent)，这是我自己的项目。
 
 启动只需运行 `opencode` 命令即可。
 
@@ -138,7 +138,7 @@ Harness，字面意思是套在马身上让马干活的东西，AI Harness 可�
 
 以 Deepseek 为例，阅读他们的[官方接口文档](https://api-docs.deepseek.com/zh-cn/)
 
-![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/ce4a4650f8d8787b2064ad3429a6facb4d4d0d4b/wiki/pictures/deepseek%E6%8E%A5%E5%8F%A3.png)
+![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/deepseek%E6%8E%A5%E5%8F%A3.png)
 
 可以在表格中找到这三样东西：`base_url`决定了请求谁，`api_key`是密钥，`model`决定了使用什么模型。有了这三样东西就可以在任意地方调用 AI 了。
 
