@@ -37,7 +37,7 @@
 
     你会在 `astrbot run` 的输出里看到如下内容：
 
-    ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/astrbot/astrbot-run.png)
+    ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/6ba36eb37d0ad6602638ff0e504d245a77f02b3c/wiki/pictures/astrbot/astrbot-run.png)
 
     在浏览器输入图中的任意地址访问 WebUI。例如本地访问时使用的 `http://localhost:6185`，推荐将地址添加进收藏夹。
 
@@ -52,7 +52,7 @@
 
     然后会弹出 AstrBot 仪表盘提示更改用户名和密码，修改后重新登录。
 
-    ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/astrbot/passwd.png)
+    ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/6ba36eb37d0ad6602638ff0e504d245a77f02b3c/wiki/pictures/astrbot/passwd.png)
 
 AstrBot 的启动到此结束，下一步需要创建机器人，本文只介绍 NapCat 一种。
 
@@ -68,7 +68,7 @@ AstrBot 的启动到此结束，下一步需要创建机器人，本文只介绍
 
     NapCat 使用 AppImage 版本可能更方便一些，[下载地址在这](https://github.com/NapNeko/NapCatAppImageBuild/releases)。x86_64 架构下载 `-amd64.AppImage` 版本。
 
-    ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/astrbot/download-napcat.png)
+    ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/6ba36eb37d0ad6602638ff0e504d245a77f02b3c/wiki/pictures/astrbot/download-napcat.png)
 
 2. 启动 NapCat
 
@@ -86,7 +86,7 @@ AstrBot 的启动到此结束，下一步需要创建机器人，本文只介绍
 
     注意如下输出：
 
-    ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/astrbot/run-napcat.png)
+    ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/6ba36eb37d0ad6602638ff0e504d245a77f02b3c/wiki/pictures/astrbot/run-napcat.png)
 
     记录访问 WebUI 的地址。然后扫码登录你的小号 QQ，或者新建一个 QQ 号当作机器人。后续可以用以下方式快速登录：
 
@@ -100,11 +100,11 @@ AstrBot 的启动到此结束，下一步需要创建机器人，本文只介绍
 
     在 WebUI 点进 `网络配置` --> `新建` --> `Websocket 客户端`
 
-    ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/astrbot/napcat-websocket.png)
+    ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/6ba36eb37d0ad6602638ff0e504d245a77f02b3c/wiki/pictures/astrbot/napcat-websocket.png)
 
     按照下图进行配置：
 
-    ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/astrbot/napcat-websocket4.png)
+    ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/6ba36eb37d0ad6602638ff0e504d245a77f02b3c/wiki/pictures/astrbot/napcat-websocket4.png)
 
     激活 `启用`，`名称` 按需填写，`URL` 填写 `ws://localhost:6199/ws`。
 
@@ -112,13 +112,13 @@ AstrBot 的启动到此结束，下一步需要创建机器人，本文只介绍
 
     回到 AstrBot 的 WebUI，添加消息平台类别为 `OneBot v11` 机器人。
 
-    ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/astrbot/newabot.png)
+    ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/6ba36eb37d0ad6602638ff0e504d245a77f02b3c/wiki/pictures/astrbot/newabot.png)
 
-    ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/astrbot/setnewbot.png)
+    ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/6ba36eb37d0ad6602638ff0e504d245a77f02b3c/wiki/pictures/astrbot/setnewbot.png)
 
     稍作等待之后应该会出现已连接的日志：
 
-    ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/astrbot/suclog.png)
+    ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/6ba36eb37d0ad6602638ff0e504d245a77f02b3c/wiki/pictures/astrbot/suclog.png)
 
 现在我们需要对机器人做最后的配置。
 
@@ -135,9 +135,9 @@ AstrBot 的启动到此结束，下一步需要创建机器人，本文只介绍
 
 1. 添加对话模型
 
-    ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/astrbot/addmodel.png)
+    ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/6ba36eb37d0ad6602638ff0e504d245a77f02b3c/wiki/pictures/astrbot/addmodel.png)
 
-    ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/astrbot/setllm.png)
+    ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/6ba36eb37d0ad6602638ff0e504d245a77f02b3c/wiki/pictures/astrbot/setllm.png)
 
     这一步结束之后就可以在 QQ 里像跟好友聊天一样跟刚刚登录 NapCat 的那个账号聊天啦。
 
@@ -147,15 +147,15 @@ AstrBot 的启动到此结束，下一步需要创建机器人，本文只介绍
 
 在想用的模型后面加上 api 关键词就可以找到对应模型的 API 平台，例如 `deepseek api 平台`。通常通过 `登录账号` --> `设置付款方式` --> `创建 Api Key` 这几个步骤之后就可以获取到 API。
 
-![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/astrbot/deepseekapi.png)
+![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/6ba36eb37d0ad6602638ff0e504d245a77f02b3c/wiki/pictures/astrbot/deepseekapi.png)
 
 然后在 AstrBot 的提供商源的 `新增` 列表里选择对应提供商的选项即可。如果没有对应选项的话就选择 `Open AI Compatible`，然后去查你用的 AI 的 API 文档，他们会提供兼容 OpenAI 的 `base_url` 给你，替换掉 `Open AI Compatible` 配置页面里的 `API Base URL` 即可。
 
-![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/astrbot/deepseek2.png)
+![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/6ba36eb37d0ad6602638ff0e504d245a77f02b3c/wiki/pictures/astrbot/deepseek2.png)
 
-![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/astrbot/deepseek3.png)
+![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/6ba36eb37d0ad6602638ff0e504d245a77f02b3c/wiki/pictures/astrbot/deepseek3.png)
 
-![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/astrbot/deepseek4.png)
+![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/6ba36eb37d0ad6602638ff0e504d245a77f02b3c/wiki/pictures/astrbot/deepseek4.png)
 
 ## 本地部署 AI
 
@@ -167,26 +167,26 @@ paru -S lmstudio-bin
 
 按照自己的硬件配置下载合适的模型。
 
-![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/astrbot/lmstudio.png)
+![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/6ba36eb37d0ad6602638ff0e504d245a77f02b3c/wiki/pictures/astrbot/lmstudio.png)
 
 lmstudio 会贴心地提示你能不能使用。
 
-![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/astrbot/lmstudio2.png)
+![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/6ba36eb37d0ad6602638ff0e504d245a77f02b3c/wiki/pictures/astrbot/lmstudio2.png)
 
 下载完成后要进入 LM Studio 的 server 页面启动服务器，记住 LM Studio 使用的是 `1234` 端口。
 
-![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/astrbot/lmstudio3.png)
+![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/6ba36eb37d0ad6602638ff0e504d245a77f02b3c/wiki/pictures/astrbot/lmstudio3.png)
 
 然后在 AstrBot 里添加 lmstudio，启用模型。
 
-![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/astrbot/lmstudio4.png)
+![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/6ba36eb37d0ad6602638ff0e504d245a77f02b3c/wiki/pictures/astrbot/lmstudio4.png)
 
 
 </details>
 
 ## 基本配置
 
-![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/astrbot/astrbot-menu.png)
+![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/6ba36eb37d0ad6602638ff0e504d245a77f02b3c/wiki/pictures/astrbot/astrbot-menu.png)
 
 修改配置之后记得右下角保存。
 
@@ -198,17 +198,17 @@ lmstudio 会贴心地提示你能不能使用。
 
         在 `模型` 板块设置 `默认对话模型`。
 
-        ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/astrbot/astrbot-config1.png)
+        ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/6ba36eb37d0ad6602638ff0e504d245a77f02b3c/wiki/pictures/astrbot/astrbot-config1.png)
 
     - 人格
 
         在 `人格` 板块设置最基本的角色设定和提示词。
 
-        ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/astrbot/renge0.png)
+        ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/6ba36eb37d0ad6602638ff0e504d245a77f02b3c/wiki/pictures/astrbot/renge0.png)
 
-        ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/astrbot/renge1.png)
+        ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/6ba36eb37d0ad6602638ff0e504d245a77f02b3c/wiki/pictures/astrbot/renge1.png)
 
-        ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/astrbot/renge2.png)
+        ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/6ba36eb37d0ad6602638ff0e504d245a77f02b3c/wiki/pictures/astrbot/renge2.png)
 
     - 网页搜索
 
@@ -218,14 +218,14 @@ lmstudio 会贴心地提示你能不能使用。
 
         这一项之后还需要在 `平台配置` 页面设置 `管理员 ID` 才能让 AI 使用电脑。
 
-        ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/astrbot/local.png)
+        ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/6ba36eb37d0ad6602638ff0e504d245a77f02b3c/wiki/pictures/astrbot/local.png)
 
 
     - 其他配置
 
         推荐激活 `流式输出`、`用户识别`、`显示群名称`。
 
-        ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/astrbot/otherconfig.png)
+        ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/6ba36eb37d0ad6602638ff0e504d245a77f02b3c/wiki/pictures/astrbot/otherconfig.png)
 
 - 平台配置
 
@@ -235,9 +235,9 @@ lmstudio 会贴心地提示你能不能使用。
 
           给机器人发消息：`/sid`。然后机器人会回复你 `UMO` 和 `UID`。在 `管理员 ID` 的地方点击 `添加更多`，把 `UID` 加进去。
 
-          ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/astrbot/uid.png)
+          ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/6ba36eb37d0ad6602638ff0e504d245a77f02b3c/wiki/pictures/astrbot/uid.png)
 
-          ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/astrbot/uid2.png)
+          ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/6ba36eb37d0ad6602638ff0e504d245a77f02b3c/wiki/pictures/astrbot/uid2.png)
 
           这样 AI 就可以操作你的电脑了。
 
@@ -245,21 +245,21 @@ lmstudio 会贴心地提示你能不能使用。
 
         如果你想要 AI 在群里只回复你的消息的话可以把 `UMO` 加进 `白名单 ID 列表` 里。
 
-        ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/astrbot/baimindan.png)
+        ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/6ba36eb37d0ad6602638ff0e504d245a77f02b3c/wiki/pictures/astrbot/baimindan.png)
 
     - 内容安全
 
         推荐设置一些额外安全屏蔽词。
 
-        ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/astrbot/safe1.png)
+        ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/6ba36eb37d0ad6602638ff0e504d245a77f02b3c/wiki/pictures/astrbot/safe1.png)
 
-        ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/astrbot/safe2.png)
+        ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/6ba36eb37d0ad6602638ff0e504d245a77f02b3c/wiki/pictures/astrbot/safe2.png)
 
 - 扩展功能
 
     还可以在扩展功能里开启一些让 AI 更 `真` 的功能。
 
-    ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/astrbot/extraconfig.png)
+    ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/6ba36eb37d0ad6602638ff0e504d245a77f02b3c/wiki/pictures/astrbot/extraconfig.png)
 
 
 至此，享受吧！

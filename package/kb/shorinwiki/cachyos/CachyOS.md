@@ -11,31 +11,31 @@ CachyOS 是当下最火热的性能特化的 Arch 衍生发行版，本文介绍
 
 1. 语言
 
-    ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/cachyos/language.png)
+    ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/6ba36eb37d0ad6602638ff0e504d245a77f02b3c/wiki/pictures/cachyos/language.png)
 
     这里设置的是安装程序的显示语言和之后系统的本地化，请选择英文。系统本地化等装完系统进桌面环境之后再设置为中文，否则使用终端和中文输入法会不方便。
 
 2. 时区
 
-    ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/cachyos/timezone.png)
+    ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/6ba36eb37d0ad6602638ff0e504d245a77f02b3c/wiki/pictures/cachyos/timezone.png)
 
     中国对应的时区是 Asia/Shanghai。
 
 3. 键盘布局
 
-    ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/cachyos/keyboard-layout.png)
+    ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/6ba36eb37d0ad6602638ff0e504d245a77f02b3c/wiki/pictures/cachyos/keyboard-layout.png)
 
     选 US 或者 Chinese 都可以。
 
 4. Bootloader 引导加载程序
 
-    ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/cachyos/bootloader.png)
+    ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/6ba36eb37d0ad6602638ff0e504d245a77f02b3c/wiki/pictures/cachyos/bootloader.png)
 
     如果你不知道选哪个请选择 GRUB。
 
 5. 分区
 
-    ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/cachyos/partition.png)
+    ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/6ba36eb37d0ad6602638ff0e504d245a77f02b3c/wiki/pictures/cachyos/partition.png)
 
     这一步是重点，根据需求选择。
 
@@ -61,25 +61,25 @@ CachyOS 是当下最火热的性能特化的 Arch 衍生发行版，本文介绍
 
     - 选择空闲空间，点击 create 创建。
 
-        ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/cachyos/partition2.png)
+        ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/6ba36eb37d0ad6602638ff0e504d245a77f02b3c/wiki/pictures/cachyos/partition2.png)
 
     - 新建启动分区
 
         CachyOS 要求启动分区 Size（大小）至少为 `512MB`，FileSystem（文件系统）为 `fat32`，MountPoint（挂载点）为 `/boot/efi`，Flags（标记）为 `boot`。
 
-        ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/cachyos/partition3.png)
+        ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/6ba36eb37d0ad6602638ff0e504d245a77f02b3c/wiki/pictures/cachyos/partition3.png)
 
     - 新建根分区
 
         剩下的空闲空间都是根分区，文件系统推荐 `btrfs`，挂载点为 `/`。
 
-        ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/cachyos/partition4.png)
+        ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/6ba36eb37d0ad6602638ff0e504d245a77f02b3c/wiki/pictures/cachyos/partition4.png)
 
 7. 桌面环境
 
     如果没有特殊需求，选择 `Plasma Desktop`。
 
-    ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/cachyos/desktop.png)
+    ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/6ba36eb37d0ad6602638ff0e504d245a77f02b3c/wiki/pictures/cachyos/desktop.png)
 
 8. 选择要安装的包
 
@@ -89,7 +89,7 @@ CachyOS 是当下最火热的性能特化的 Arch 衍生发行版，本文介绍
 
     很多软件拒绝在 root 权限运行，普通用户是必须的。
 
-    ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/cachyos/user.png)
+    ![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/6ba36eb37d0ad6602638ff0e504d245a77f02b3c/wiki/pictures/cachyos/user.png)
 
 到这一步安装就算是完成了。CachyOS 会自动处理好必要的软件源和驱动，开箱即用。
 

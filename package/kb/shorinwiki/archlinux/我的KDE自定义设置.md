@@ -22,7 +22,7 @@
 
 ## 这是我的 KDE
 
-![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/875d9fcbc1cd6826451520fe7ae20ec3eeab4e2f/wiki/pictures/KDE-preview.png)
+![](https://raw.githubusercontent.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide/6ba36eb37d0ad6602638ff0e504d245a77f02b3c/wiki/pictures/KDE-preview.png)
 
 ## 桌面编辑
 
